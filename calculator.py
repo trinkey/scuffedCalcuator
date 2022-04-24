@@ -1,7 +1,8 @@
 import turtle
 
-print("If you see this, please note that this calculator is very scuffed and a lot of thigns dont work (for example squaring is very broken half the time)")
+print("If you see this, please note that this calculator is very scuffed and a lot of things dont work (for example squaring is very broken half the time)")
 
+alert = 1
 screen = turtle.Screen()
 numbers = []
 old = 0
@@ -307,7 +308,7 @@ def clickSquare(x, y):
     ans = old
     clickEquals(0, 0)
 def clickEquals(x, y):
-    global printer, numberPrinter, numbers, old, ugh, prevNum, operation, ans, operationing
+    global printer, numberPrinter, numbers, old, ugh, prevNum, operation, ans, operationing, alert
     try:
         operationing()
     except:
@@ -324,7 +325,9 @@ def clickEquals(x, y):
     numbers = []
     operation = ""
     print(ans)
-    print("^^ there is a limit to how many characters are shown on the screen so this is here to help you see the entire answer btw")
+    if alert == 1:
+        print("^^ there is a limit to how many characters are shown on the screen so this is here to help you see the entire answer btw")
+        alert = 0
 def clickBackspace(x, y):
     global numbers, updateNum
     try:
