@@ -185,7 +185,10 @@ def updateNum():
     printer = "".join([str(item) for item in numbers])
     numberPrinter.clear()
     screen.update()
-    numberPrinter.write(printer, align = "right", font = ["Arial", 100, "normal"])
+    try:
+        numberPrinter.write(printer, align = "right", font = ["Cousine", 100, "normal"])
+    except:
+        numberPrinter.write(printer, align = "right", font = ["Arial", 100, "normal"])
     screen.update()
 def bye(x, y):
     global screen
