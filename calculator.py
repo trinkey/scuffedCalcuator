@@ -235,8 +235,9 @@ def clickNine(x, y):
     updateNum()
 def clickDecimal(x, y):
     global numbers, updateNum
-    numbers.append(".")
-    updateNum()
+    if numbers.count(".") == 0:
+        numbers.append(".")
+        updateNum()
 def clickAdd(x, y):
     global numbers, updateNum, joinNumbers, operation, old, ugh
     ugh += 1
