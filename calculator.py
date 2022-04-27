@@ -12,10 +12,8 @@ printer = ""
 ugh = 0
 ans = 0
 
-screen.tracer(0)
 screen.setup(700,1000)
 screen.bgcolor("#000000")
-screen.tracer(1)
 
 screen.addshape("calculatorIcons/zero.gif")
 screen.addshape("calculatorIcons/one.gif")
