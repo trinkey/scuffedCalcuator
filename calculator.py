@@ -1,8 +1,8 @@
+from re import L
 import turtle
 
-print("If you see this, please note that this calculator is very scuffed and a lot of things dont work (for example squaring is very broken half the time)")
+print("If you see this, please note that this calculator is very scuffed and a lot of thigns dont work (for example squaring is very broken half the time)")
 
-alert = 1
 screen = turtle.Screen()
 numbers = []
 old = 0
@@ -183,10 +183,7 @@ def updateNum():
     printer = "".join([str(item) for item in numbers])
     numberPrinter.clear()
     screen.update()
-    try:
-        numberPrinter.write(printer, align = "right", font = ["Cousine", 100, "normal"])
-    except:
-        numberPrinter.write(printer, align = "right", font = ["Arial", 100, "normal"])
+    numberPrinter.write(printer, align = "right", font = ["Arial", 100, "normal"])
     screen.update()
 def bye(x, y):
     global screen
@@ -233,9 +230,8 @@ def clickNine(x, y):
     updateNum()
 def clickDecimal(x, y):
     global numbers, updateNum
-    if numbers.count(".") == 0:
-        numbers.append(".")
-        updateNum()
+    numbers.append(".")
+    updateNum()
 def clickAdd(x, y):
     global numbers, updateNum, joinNumbers, operation, old, ugh
     ugh += 1
@@ -310,7 +306,7 @@ def clickSquare(x, y):
     ans = old
     clickEquals(0, 0)
 def clickEquals(x, y):
-    global printer, numberPrinter, numbers, old, ugh, prevNum, operation, ans, operationing, alert
+    global printer, numberPrinter, numbers, old, ugh, prevNum, operation, ans, operationing
     try:
         operationing()
     except:
@@ -327,9 +323,7 @@ def clickEquals(x, y):
     numbers = []
     operation = ""
     print(ans)
-    if alert == 1:
-        print("^^ there is a limit to how many characters are shown on the screen so this is here to help you see the entire answer btw")
-        alert = 0
+    print("^^ there is a limit to how many characters are shown on the screen so this is here to help you see the entire answer btw")
 def clickBackspace(x, y):
     global numbers, updateNum
     try:
@@ -337,6 +331,65 @@ def clickBackspace(x, y):
     except:
         pass
     updateNum()
+
+
+def azero():
+    global clickZero
+    clickZero(0, 0)
+def aone():
+    global clickOne
+    clickOne(0, 0)
+def atwo():
+    global clickTwo
+    clickTwo(0, 0)
+def athree():
+    global clickThree
+    clickThree(0, 0)
+def afour():
+    global clickFour
+    clickFour(0, 0)
+def afive():
+    global clickFive
+    clickFive(0, 0)
+def asix():
+    global clickSix
+    clickSix(0, 0)
+def aseven():
+    global clickSeven
+    clickSeven(0, 0)
+def aeight():
+    global clickEight
+    clickEight(0, 0)
+def anine():
+    global clickNine
+    clickNine(0, 0)
+def adecimal():
+    global clickDecimal
+    clickDecimal(0, 0)
+def aplus():
+    global clickAdd
+    clickAdd(0, 0)
+def aminus():
+    global clickSub
+    clickSub(0, 0)
+def amultiply():
+    global clickMult
+    clickMult(0, 0)
+def adivide():
+    global clickDiv
+    clickDiv(0, 0)
+def aequals():
+    global clickEquals
+    clickEquals(0, 0)
+def aclear():
+    global clickClear
+    clickClear(0, 0)
+def aback():
+    global clickBackspace
+    clickBackspace(0, 0)
+def abye():
+    global bye
+    bye(0, 0)
 
 equals.onclick(clickEquals)
 zero.onclick(clickZero)
@@ -358,6 +411,28 @@ clear.onclick(clickClear)
 squared.onclick(clickSquare)
 negative.onclick(bye)
 backspace.onclick(clickBackspace)
+
+screen.onkey(azero, "0")
+screen.onkey(aone, "1")
+screen.onkey(atwo, "2")
+screen.onkey(athree, "3")
+screen.onkey(afour, "4")
+screen.onkey(afive, "5")
+screen.onkey(asix, "6")
+screen.onkey(aseven, "7")
+screen.onkey(aeight, "8")
+screen.onkey(anine, "9")
+screen.onkey(aback, "BackSpace")
+screen.onkey(aequals, "Return")
+screen.onkey(aequals, "equal")
+screen.onkey(adecimal, "period")
+screen.onkey(aclear, "c")
+screen.onkey(aplus, "plus")
+screen.onkey(aminus, "minus")
+screen.onkey(adivide, "slash")
+screen.onkey(amultiply, "asterisk")
+screen.onkey(abye, "space")
+screen.listen()
 
 updateNum()
 
