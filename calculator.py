@@ -1,4 +1,3 @@
-from re import L
 import turtle
 
 print("If you see this, please note that this calculator is very scuffed and a lot of thigns dont work (for example squaring is very broken half the time)")
