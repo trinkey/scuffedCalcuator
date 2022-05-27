@@ -4,6 +4,7 @@ import turtle
 print("If you see this, please note that this calculator is very scuffed and a lot of thigns dont work (for example squaring is very broken half the time)")
 
 screen = turtle.Screen()
+screen.tracer(0)
 numbers = []
 old = 0
 prevNum = 0
